@@ -1,18 +1,30 @@
+const parseInput = (input) => {
+    return input.trim().split('\n').reduce((acc, line) => {
+        const [left, right] = line.trim().split(/\s+/).map(Number);
+        acc[0].push(left);
+        acc[1].push(right);
+        return acc;
+    }, [[], []]);
+};
+
 export const part1 = (input) => {
-    // Your solution for part 1
-    return 0;
+    const [leftList, rightList] = parseInput(input);
+    
+    const sortedLeft = [...leftList].sort((a, b) => a - b);
+    const sortedRight = [...rightList].sort((a, b) => a - b);
+
+    return sortedLeft.reduce((sum, num, index) => 
+        sum + Math.abs(num - sortedRight[index]), 0);
 };
 
 export const part2 = (input) => {
-    // Your solution for part 2
-    return 0;
-};
+    const [leftList, rightList] = parseInput(input);
 
-// If running directly (node solution.js)
-if (process.argv[1] === new URL(import.meta.url).pathname) {
-    const fs = await import('fs');
-    const input = fs.readFileSync('src/day01/input.txt', 'utf8').trim();
-    
-    console.log('Part 1:', part1(input));
-    console.log('Part 2:', part2(input));
-}
+    const rightFrequencies = rightList.reduce((freq, num) => {
+        freq[num] = (freq[num] || 0) + 1;
+        return freq;
+    }, {});
+
+    return leftList.reduce((score, num) => 
+        score + (num * (rightFrequencies[num] || 0)), 0);
+};
