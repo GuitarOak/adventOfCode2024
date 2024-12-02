@@ -1,0 +1,16 @@
+{
+  "name": "advent-of-code-2024",
+  "version": "1.0.0",
+  "description": "Solutions for Advent of Code 2024",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "start": "node src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
