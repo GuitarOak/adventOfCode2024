@@ -12,6 +12,7 @@ Welcome to my Advent of Code 2024 solutions repository! Here you'll find my dail
 |-----|:------:|:------:|-------------|
 | [Day 1](src/day01/) | ⭐ | ⭐ | Location ID List Analysis |
 | [Day 2](src/day02/) | ⭐ | ⭐ | Red-Nosed Reactor Safety |
+| [Day 3](src/day03/) | ⭐ | ⭐ | Computer Memory Multiplication |
 
 ## 🚀 Project Structure
 
